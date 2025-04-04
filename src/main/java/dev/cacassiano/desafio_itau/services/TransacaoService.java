@@ -8,8 +8,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import dev.cacassiano.desafio_itau.dtos.TransacaoDTO;
+import lombok.Getter;
+import lombok.Setter;
 
 @Service
+@Setter
+@Getter
 public class TransacaoService {
 
     private ArrayList<TransacaoDTO> transas = new ArrayList<TransacaoDTO>();
