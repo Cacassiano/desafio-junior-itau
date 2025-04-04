@@ -6,10 +6,12 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import dev.cacassiano.desafio_itau.dtos.EstatisticasDTO;
 import dev.cacassiano.desafio_itau.dtos.TransacaoDTO;
 import dev.cacassiano.desafio_itau.services.TransacaoService;
 
@@ -33,5 +35,9 @@ public class TransacaoController {
         return ResponseEntity.ok().build();
     }
 
+    @GetMapping("/estatistica")
+    public EstatisticasDTO getEstatisticas() {
+        return this.service.getEstatisticas(1);
+    }
     
 }
